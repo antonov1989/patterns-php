@@ -5,6 +5,14 @@
  */
 
 // Start data - create a child class
+class AreaCalculator {
+    public function sum(): number
+    {
+        $area = 111; //....
+        return $area;
+    }
+}
+
 class VolumeCalculator extends AreaCalulator {
     public function __construct($shapes = array()) {
         parent::__construct($shapes);

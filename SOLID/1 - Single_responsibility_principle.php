@@ -74,7 +74,7 @@ class AreaCalculator {
 class SumCalculatorOutputter {
     protected $areas;
     
-    public function __construct($areas) {
+    public function __construct(AreaCalculator $areas) {
         $this->areas = $areas;
     }
     
