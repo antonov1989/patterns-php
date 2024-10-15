@@ -1,30 +1,34 @@
 <?php
 
-namespace DesignPatterns\Creational\FactoryMethod\Tests;
-
-use DesignPatterns\Creational\Factories\FileLoggerFactory;
-use Patterns\FactoryMethod\Factories\StdoutLoggerFactory;
-
 /**
+ * FactoryMethod - определяет общий интерфейс для создания объектов в суперклассе,
+ * позволяя подклассам изменять тип создаваемых объектов.
+ *
+ * abstract class Creator {
+ *   // Абстрактний метод, який повинен бути реалізований підкласами
+ *   abstract public function factoryMethod(): Product;
+ *   public function someOperation(): string {...}
+ * }
+ *
+ * class ConcreteCreatorA extends Creator {
+ *  public function factoryMethod(): Product {
+ *    return new ConcreteProductA();
+ *  }
+ * }
+ *
+ * $creator = new ConcreteCreatorA();
+ * $creator->someOperation()
+ *
+ *****************************
+ *
  * Class FactoryMethodTest
  * Ще підійде приклад з підрахуванням периметра квадрат, ромба чи прямокутника,
  * де один фабричний метод буде робити це для різних классів
  */
-class FactoryMethodTest
-{
-    public function testCanCreateStdoutLogging()
-    {
-        $loggerFactory = new StdoutLoggerFactory();
-        $logger = $loggerFactory->createLogger();
-    
-        $logger->log('Stdout logger');
-    }
-    
-    public function testCanCreateFileLogging()
-    {
-        $loggerFactory = new FileLoggerFactory(sys_get_temp_dir());
-        $logger = $loggerFactory->createLogger();
-    
-        $logger->log('File logger');
-    }
-}
+
+// разные вариации, но реализация одна
+$loggerFactory = new StdoutLoggerFactory();
+//$loggerFactory = new FileLoggerFactory(sys_get_temp_dir());
+
+// вызов фабричного метода
+$logger = $loggerFactory->createLogger();

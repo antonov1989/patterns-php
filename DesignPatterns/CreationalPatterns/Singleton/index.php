@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Singleton - гарантирует, что у класса есть только один экземпляр,
+ * и предоставляет к нему глобальную точку доступа.
+ *
+ * getInstance
+ * __construct
+ * __clone
+ * __wakeup
+ */
+
 $s1 = Singleton::getInstance();
 $s2 = Singleton::getInstance();
 if ($s1 === $s2) {
