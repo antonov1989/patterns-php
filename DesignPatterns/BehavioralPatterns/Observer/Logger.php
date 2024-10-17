@@ -1,9 +1,11 @@
 <?php
 
+namespace Patterns\Observer;
+
 /**
  * Этот Конкретный Компонент регистрирует все события, на которые он подписан.
  */
-class Logger // implements \SplObserver
+class Logger implements \SplObserver
 {
     private $filename;
     

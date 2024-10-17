@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Adapter — позволяет объектам с несовместимыми интерфейсами работать вместе.
+ * Обертка
+ * SMSNotificationAdapter это обертка которая позволяет коду работать без изменений,
+ * а все изменения в адаптере
+ */
+
 use Patterns\Adapter\Interfaces\NotificationInterface;
 use Patterns\Adapter\Classes\Notification;
 use Patterns\Adapter\Classes\SMSNotificationAdapter;

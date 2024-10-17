@@ -1,6 +1,6 @@
 <?php
 
-namespace RefactoringGuru\Observer\RealWorld;
+namespace Patterns\Observer;
 
 /**
  * Пользовательский репозиторий представляет собой Издателя. Различные объекты

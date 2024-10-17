@@ -1,8 +1,17 @@
 <?php
 
 /**
+ * Observer - создаёт механизм подписки, позволяющий одним объектам следить и реагировать на события,
+ * происходящие в других объектах.
+ */
+
+
+/**
  * Клиентский код.
  */
+use Patterns\Observer\UserRepository;
+use Patterns\Observer\Logger;
+use Patterns\Observer\OnboardingNotification;
 
 $repository = new UserRepository();
 $repository->attach(new Logger(__DIR__ . "/log.txt"), "*");
