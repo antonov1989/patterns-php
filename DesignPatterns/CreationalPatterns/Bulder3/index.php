@@ -11,6 +11,7 @@
  * Product - готовый продукт зависящий от данных билдера
  */
 
+//$builder = new ConcreteSmallHouseBuilder();
 $builder = new ConcreteBigHouseBuilder();
 $director = new Director();
 $director->setBuilder($builder);
